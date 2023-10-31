@@ -9,16 +9,17 @@ var_dump($_FILES);
 if (empty($nombre) || empty($precio) || empty($categoria)) {
   $mensajeError = "Todos los campos son requeridos. Por favor, complete el formulario.";
 } else {
+  // TODO: Categoría obtenida de la DB
   // Validación del precio y la categoría como números mayores que 0
   if (!is_numeric($precio) || !is_numeric($categoria) || $precio <= 0 || $categoria <= 0) {
     $mensajeError = "El precio y la categoría deben ser números mayores que 0.";
   } else {
-    // Validación de la imagen como archivo de imagen
     $imagen = $_FILES["imagen"];
     echo $imagen;
     $imagenNombre = $imagen["name"];
     $imagenTipo = $imagen["type"];
 
+    // TODO: No se obtiene correctamente el _FILES
     // Verifica que el archivo sea una imagen
     $permitidos = array("image/jpg", "image/jpeg", "image/png", "image/gif");
     if (!in_array($imagenTipo, $permitidos)) {
@@ -27,13 +28,11 @@ if (empty($nombre) || empty($precio) || empty($categoria)) {
   }
 }
 
-// Comprueba si hay algún mensaje de error
+// Muestra el mensaje de error
 if (!empty($mensajeError)) {
-  echo $mensajeError; // Muestra el mensaje de error
+  echo $mensajeError;
 } else {
-  // Procesa el formulario, ya que todos los campos han sido validados
-  // Aquí puedes realizar las acciones necesarias, como subir la imagen a un servidor o guardar los datos en una base de datos.
-  echo "Formulario válido. Puedes procesar los datos ahora.";
+  echo "Formulario válido.";
 }
 
 ?>
@@ -70,7 +69,7 @@ if (!empty($mensajeError)) {
         <input type="number" name="precio" id="precio" min="0" required>
         <label for="imagen">Imagen: </label>
         <input type="file" name="imagen" id="imagen" required>
-        <label for="categoria">Categoria: </label>
+        <label for="categoria">Categoría: </label>
         <input type="number" name="categoria" id="categoria" min="0" required>
         <button type="reset">Reset</button>
         <button type="submit">Enviar</button>
