@@ -25,16 +25,10 @@ var_dump($_POST);
       <h1>Lista de productos</h1>
     </header>
     <main>
-      <form action="/" method="post">
-        <button type="submit" value="crear" name="accion"><span class="fa-solid fa-plus-circle"></span> Crear
-          producto</button>
-        <button type="submit" value="consultar" name="accion"><span class="fa-solid fa-repeat"></span> Consultar
-          listado</button>
-        <button type="submit" value="modificar" name="accion"><span class="fa-solid fa-pen-to-square"></span>
-          Modificar producto</button>
-        <button type="submit" value="eliminar" name="accion"><span class="fa-solid fa-trash"></span> Eliminar
-          producto</button>
-      </form>
+      <a href="crear_producto.php"><span class="fa-solid fa-plus-circle"></span>Crear producto</a>
+      <a href="listado_productos.php"><span class="fa-solid fa-repeat"></span>Consultar listado</a>
+      <a href="edita_producto.php"><span class="fa-solid fa-pen-to-square"></span>Modificar producto</a>
+      <a href=""><span class="fa-solid fa-trash"></span>Eliminar producto</a>
     </main>
   </body>
 
