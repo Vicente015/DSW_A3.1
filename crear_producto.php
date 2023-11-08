@@ -13,8 +13,8 @@ $categoria = $_POST["categoria"];
 $sql = "SELECT Id, Nombre FROM Categorías";
 $stmt = $conn->query($sql);
 $categorias = $stmt->fetchAll();
-// TODO: Catch de posible error aquí
 
+// TODO: Catch de posible error aquí
 // TODO: Si hay algún error de validación, informará al usuario de cuáles son los errores y le permitirá, mediante un enlace, volver a rellenar el formulario
 // TODO: Si no hay ningún error, se mostrará un mensaje de confirmación y mediante un enlace se podrá acceder al menú principal.
 
@@ -26,6 +26,10 @@ if (!empty($_POST)) {
 
   //? Si hay errores
   if (count($errores) > 0) {
+    foreach ($errores as $key => $error) {
+      echo "Errores:";
+      echo $error;
+    }
   }
 
   //* Subida archivos
@@ -68,13 +72,13 @@ if (!empty($_POST)) {
         <label for="imagen">Imagen: </label>
         <input type="file" name="imagen" id="imagen" required>
         <label for="categoria">Categoría: </label>
-        <select name="categori" id="categoria">
+        <select name="categoria" id="categoria">
           <?php
-        // Cargar categorias
-        foreach ($categorias as $categoria) {
-          echo "<option value='" . $categoria['Id'] . "'>" . $categoria['Nombre'] . "</option>";
-        }
-        ?>
+          // Cargar categorias
+          foreach ($categorias as $categoria) {
+            echo "<option value='" . $categoria['Id'] . "'>" . $categoria['Nombre'] . "</option>";
+          }
+          ?>
         </select>
         <button type="reset">Reset</button>
         <button type="submit">Enviar</button>
