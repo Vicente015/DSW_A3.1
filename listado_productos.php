@@ -11,7 +11,6 @@ try {
   echo "Error al obtener los productos: " . $e->getMessage();
 }
 
-
 //* Cargar categorías
 try {
   $sql = "SELECT Id, Nombre FROM Categorías";
