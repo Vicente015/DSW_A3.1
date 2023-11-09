@@ -65,11 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST)) {
 
 <body>
   <header>
-    <h1>CRUD</h1>
-    <a href="crear_producto.php"><span class="fa-solid fa-plus-circle"></span>Crear producto</a>
-    <a href="listado_productos.php"><span class="fa-solid fa-repeat"></span>Consultar listado</a>
-    <a href="edita_producto.php"><span class="fa-solid fa-pen-to-square"></span>Modificar producto</a>
-    <a href=""><span class="fa-solid fa-trash"></span>Eliminar producto</a>
+    <h1>Crear producto</h1>
   </header>
   <main>
     <?php if (empty($_POST)) : ?>
