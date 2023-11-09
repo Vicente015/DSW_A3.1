@@ -1,7 +1,5 @@
 <?php
 
-// TODO: Guardar imagen con el nombre del producto
-
 /**
  * Sube los archivos a `directorio_destino` y renombra los archivos si ya existen
  */
@@ -21,7 +19,6 @@ function subir_archivos(string $directorio_destino)
       $contador++;
     }
 
-    // TODO: Adaptar a execepciones? https://www.w3schools.com/php/php_exceptions.asp
     if (move_uploaded_file($_FILES[$clave]["tmp_name"], $fichero_destino)) {
       return $fichero_destino;
     } else {

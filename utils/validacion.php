@@ -15,8 +15,6 @@ function validarCampos($nombre, $precio, $categoria)
   }
 }
 
-// TODO: Devolver errores
-
 function validarImagen()
 {
   global $errores;
