@@ -1,9 +1,10 @@
 <?php
 
-$errores = [];
+$errores = array();
 
 function validarCampos($nombre, $precio, $categoria)
 {
+  global $errores;
   if (empty($nombre) || empty($precio) || empty($categoria)) {
     array_push($errores, "Todos los campos son requeridos. Por favor, complete el formulario.");
   }
@@ -18,6 +19,7 @@ function validarCampos($nombre, $precio, $categoria)
 
 function validarImagen()
 {
+  global $errores;
   if (empty($_FILES)) {
     array_push($errores, "No ha adjuntado ningún archivo.");
     return;

@@ -5,7 +5,8 @@
 /**
  * Sube los archivos a `directorio_destino` y renombra los archivos si ya existen
  */
-function subir_archivos(string $directorio_destino): bool {
+function subir_archivos(string $directorio_destino)
+{
   foreach ($_FILES as $clave => $valor) {
     $nombreArchivo = $_FILES[$clave]["name"];
     if (!$nombreArchivo) continue;
@@ -22,11 +23,9 @@ function subir_archivos(string $directorio_destino): bool {
 
     // TODO: Adaptar a execepciones? https://www.w3schools.com/php/php_exceptions.asp
     if (move_uploaded_file($_FILES[$clave]["tmp_name"], $fichero_destino)) {
-      return true;
+      return $fichero_destino;
     } else {
       return false;
     }
   }
 }
-
-?>
