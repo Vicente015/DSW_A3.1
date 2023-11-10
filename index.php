@@ -1,7 +1,4 @@
 <?php
-
-var_dump($_POST);
-
 ?>
 
 <!DOCTYPE html>
@@ -13,16 +10,12 @@ var_dump($_POST);
     <title>Actividad 3.1</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <style>
-    span {
-      color: var(--text-bright);
-    }
-    </style>
+    <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
     <header>
-      <h1>Lista de productos</h1>
+      <h1>Menú principal</h1>
     </header>
     <main>
       <a href="crear_producto.php"><span class="fa-solid fa-plus-circle"></span>Crear producto</a>

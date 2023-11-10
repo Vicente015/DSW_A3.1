@@ -56,11 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST)) {
   <title>Crear producto</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <style>
-    span {
-      color: var(--text-bright);
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -90,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST)) {
       </form>
     <?php elseif (count($errores) === 0) : ?>
       <h2>¡Se ha creado el producto correctamente!</h2>
-      <button><a href="/index.php">Volver atrás</a></button>
+      <a href="/index.php">Volver atrás</a>
     <?php elseif (count($errores) > 0) : ?>
       <h2>Errores:</h2>
       <ul>
@@ -100,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST)) {
         }
         ?>
       </ul>
-      <button><a href="/crear_producto.php">Volver atrás</a></button>
+      <a href="/crear_producto.php">Volver atrás</a>
     <?php endif; ?>
   </main>
 </body>

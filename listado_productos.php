@@ -27,22 +27,11 @@ try {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crear producto</title>
+  <title>Listado de productos</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
   <style>
-    span {
-      color: var(--text-bright);
-    }
-
-    p,
-    h1,
-    h2,
-    h3 {
-      margin: 0;
-      padding: 0;
-    }
-
     .product {
       display: flex;
       flex-direction: column;
@@ -74,18 +63,6 @@ try {
       justify-content: center;
     }
 
-    a {
-      background-color: var(--button-base);
-      color: var(--text-main);
-      padding: .5em 1em;
-      border-radius: 15px;
-      text-align: center;
-    }
-
-    a:hover {
-      background-color: var(--button-hover);
-    }
-
     .categoria {
       font-weight: bold;
     }
@@ -100,7 +77,7 @@ try {
 
 <body>
   <header>
-    <h1>Lista de productos</h1>
+    <h1>Listado de productos</h1>
   </header>
   <main>
     <section class="products">
@@ -111,10 +88,10 @@ try {
         echo "  <img src=\"" . $producto['Imagen'] . "\" alt=\"" . $producto['Nombre'] . "\">";
         echo "  <div class=\"content\">";
         echo "    <h3>" . $producto['Nombre'] . "</h3>";
-        echo "    <p class=\"categoria\">" . $categorias[$producto['Categoría']]['Nombre'] . "</p>";
+        echo "    <p class=\"categoria\">" . $categorias[$producto['Categoría'] - 1]['Nombre'] . "</p>";
         echo "    <p class=\"precio\">" . $producto['Precio'] . "€</p>";
         echo "    <div class=\"buttons\">";
-        echo "      <a href=\"edita_producto.php\"><span class=\"fa-solid fa-pen\"></span> Editar</a>";
+        echo "      <a href=\"edita_producto.php" . "?id=" . $producto['Id'] .  "\"><span class=\"fa-solid fa-pen\"></span> Editar</a>";
         echo "      <a href=\"elimina_producto.php\"><span class=\"fa-solid fa-trash\"></span> Eliminar</a>";
         echo "    </div>";
         echo "  </div>";
