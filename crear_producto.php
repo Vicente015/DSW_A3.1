@@ -13,6 +13,24 @@ try {
   echo "Error al obtener las categorías: " . $e->getMessage();
 }
 
+// Si no hay categorías, añadir 2 por defectos
+if (empty($categorias)) {
+  try {
+    $stmt = $conn->query("
+INSERT INTO Categorías (Nombre)
+SELECT 'Moviles'
+WHERE NOT EXISTS (SELECT 1 FROM Categorías);
+
+INSERT INTO Categorías (Nombre)
+SELECT 'Portatiles'
+WHERE NOT EXISTS (SELECT 1 FROM Categorías);
+");
+    $stmt->execute();
+  } catch (PDOException $e) {
+    echo "Error al obtener las categorías: " . $e->getMessage();
+  }
+}
+
 // ? Si hay POST validar
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST)) {
   $nombre = $_POST["nombre"];
