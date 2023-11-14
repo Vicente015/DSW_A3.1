@@ -92,7 +92,7 @@ try {
         echo "    <p class=\"precio\">" . $producto['Precio'] . "€</p>";
         echo "    <div class=\"buttons\">";
         echo "      <a href=\"edita_producto.php" . "?id=" . $producto['Id'] .  "\"><span class=\"fa-solid fa-pen\"></span> Editar</a>";
-        echo "      <a href=\"elimina_producto.php\"><span class=\"fa-solid fa-trash\"></span> Eliminar</a>";
+        echo "      <a href=\"elimina_producto.php" . "?id=" . $producto['Id'] . "\"><span class=\"fa-solid fa-trash\"></span> Eliminar</a>";
         echo "    </div>";
         echo "  </div>";
         echo "</div>";
